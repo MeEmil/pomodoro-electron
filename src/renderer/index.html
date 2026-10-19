@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-card">
+    <!-- Custom macOS Traffic Light Header -->
+    <header class="titlebar">
+      <div class="traffic-lights">
+        <button id="btn-close" class="traffic-light close" title="Quit"></button>
+        <button id="btn-minimize" class="traffic-light minimize" title="Hide to Menubar"></button>
+        <div class="traffic-light disabled"></div>
+      </div>
+      <div class="app-title">Pomodoro</div>
+      <div class="title-spacer"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+      <!-- Input Controls (Minutes & Task) -->
+      <div class="inputs-row">
+        <div class="input-group duration-group">
+          <input type="number" id="input-minutes" min="1" max="180" value="25" placeholder="25" />
+          <span class="unit-label">min</span>
+        </div>
+        <div class="input-group task-group">
+          <input type="text" id="input-task" placeholder="Task description..." maxlength="80" />
+        </div>
+      </div>
+
+      <!-- Live Countdown Display -->
+      <div class="timer-display" id="timer-display">25:00</div>
+
+      <!-- Action Buttons -->
+      <div class="actions-row">
+        <button id="btn-primary" class="btn btn-primary">Start</button>
+        <button id="btn-reset" class="btn btn-secondary">Reset</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

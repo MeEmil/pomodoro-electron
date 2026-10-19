@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: transparent;
+  color: #f4f4f5;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.app-card {
+  height: 100%;
+  width: 100%;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+
+/* Header & Traffic Lights */
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  padding: 0 12px;
+  background: #121215;
+  border-bottom: 1px solid #27272a;
+  -webkit-app-region: drag;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.traffic-lights {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  -webkit-app-region: no-drag;
+}
+
+.traffic-light {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.traffic-light:hover {
+  opacity: 0.85;
+  transform: scale(1.08);
+}
+
+.traffic-light:active {
+  transform: scale(0.95);
+}
+
+.traffic-light.close {
+  background-color: #ff5f56;
+}
+
+.traffic-light.minimize {
+  background-color: #ffbd2e;
+}
+
+.traffic-light.disabled {
+  background-color: #3f3f46;
+  cursor: default;
+  opacity: 0.4;
+}
+
+.app-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #71717a;
+}
+
+.title-spacer {
+  width: 45px;
+}
+
+/* Main Content Area */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 14px;
+  justify-content: space-between;
+}
+
+/* Input Fields */
+.inputs-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  -webkit-app-region: no-drag;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.duration-group {
+  width: 78px;
+}
+
+.duration-group input {
+  width: 100%;
+  padding-right: 26px;
+  text-align: center;
+}
+
+.unit-label {
+  position: absolute;
+  right: 8px;
+  font-size: 11px;
+  color: #71717a;
+  pointer-events: none;
+}
+
+.task-group {
+  flex: 1;
+}
+
+.inputs-row input {
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: 6px;
+  color: #fafafa;
+  font-size: 12px;
+  padding: 6px 8px;
+  outline: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  -webkit-app-region: no-drag;
+}
+
+.inputs-row input:focus {
+  border-color: #38bdf8;
+  background: #1e1e24;
+}
+
+.inputs-row input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Countdown Display */
+.timer-display {
+  font-size: 42px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #ffffff;
+  padding: 2px 0;
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+/* Action Buttons */
+.actions-row {
+  display: flex;
+  gap: 8px;
+  -webkit-app-region: no-drag;
+}
+
+.btn {
+  flex: 1;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #0369a1;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background: #27272a;
+  color: #a1a1aa;
+  border: 1px solid #3f3f46;
+}
+
+.btn-secondary:hover {
+  background: #3f3f46;
+  color: #f4f4f5;
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
